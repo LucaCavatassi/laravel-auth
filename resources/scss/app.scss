@@ -1,1 +1,6 @@
+@use "./partials/projects-index" as *;
 @import "~bootstrap/scss/bootstrap";
+
+a {
+    text-decoration: none;
+}

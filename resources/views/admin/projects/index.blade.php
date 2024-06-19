@@ -3,8 +3,9 @@
 @section('content')
         <div class="container">
             <h1 class="mt-2">Lista Progetti</h1>
+            <p>Clicca il nome per avere maggiori informazioni</p>
 
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hove ms-body" >
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -16,7 +17,7 @@
                     @foreach ($projects as $project)
                         <tr>
                             <th scope="row">{{ $project->id }}</th>
-                            <td>{{ $project->title }}</td>
+                            <td><a href="{{ route("admin.dashboard") }}">{{ $project->title }}</a></td>
                             <td>{{ $project->description }}</td>
                         </tr>
                     @endforeach

@@ -58,13 +58,13 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-primary' : '' }}"
+                <a class="nav-link text-white {{ Request::path() == 'admin' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.dashboard') }}">
                   <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Home Dashboard
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white {{ Route::currentRouteName() == 'projects.index' ? 'active' : '' }}"
+                <a class="nav-link text-white {{ Request::path() ==  'admin/projects' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.projects.index') }}">
                   <i class="fa-solid fa-table"></i> Projects
                 </a>
