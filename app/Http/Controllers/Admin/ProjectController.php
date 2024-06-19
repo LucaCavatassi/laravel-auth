@@ -36,7 +36,7 @@ class ProjectController extends Controller
             "description" => "max:300"
         ], [
             "title.required" => "Il titolo è necessario per aggiungere un nuovo progetto!",
-            "title.descritpion" => "La lunghezza massima della descrizione è di 300 caratteri!"
+            "title.max" => "La lunghezza massima della descrizione è di 300 caratteri!"
         ]);
         $data = $request->all();
         $newProject = new Project();
@@ -78,6 +78,10 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $project = Project::findOrFail($id);
+
+        $project->delete();
+        
+        return redirect()->route("admin.projects.index");
     }
 }
