@@ -20,10 +20,10 @@
                 @csrf
                 <div class="mb-3">
                     <label for="titolo" class="form-label">Titolo</label>
-                    <input type="text" class="form-control" id="titolo" aria-describedby="emailHelp" name="title">
+                    <input type="text" class="form-control" id="titolo" aria-describedby="emailHelp" name="title" value="{{ old("title") }}">
 
                     <label for="descrizione" class="form-label">Descrizione</label>
-                    <textarea type="text-area" class="form-control" id="descrizione" aria-describedby="emailHelp" name="description"></textarea>    
+                    <textarea type="text-area" class="form-control" id="descrizione" aria-describedby="emailHelp" name="description" value="{{ old("description") }}"></textarea>    
                 </div>
                 <button type="submit" class="btn btn-primary">Invia</button>
             </form>
