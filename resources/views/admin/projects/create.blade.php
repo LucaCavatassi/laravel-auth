@@ -5,6 +5,16 @@
             <h1 class="mt-2">Aggiungi Progetto</h1>
             <p>Compila il form per aggiungere un nuovo progetto alla tua lista.</p>
 
-            
+            <form action="{{ route("admin.projects.store") }}" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="titolo" class="form-label">Titolo</label>
+                    <input type="text" class="form-control" id="titolo" aria-describedby="emailHelp" name="title">
+
+                    <label for="descrizione" class="form-label">Descrizione</label>
+                    <textarea type="text-area" class="form-control" id="descrizione" aria-describedby="emailHelp" name="description"></textarea>    
+                </div>
+                <button type="submit" class="btn btn-primary">Invia</button>
+            </form>
         </div>
 @endsection
