@@ -31,6 +31,13 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "title" => "required|max:30",
+            "description" => "max:300"
+        ], [
+            "title.required" => "Il titolo è necessario per aggiungere un nuovo progetto!",
+            "title.descritpion" => "La lunghezza massima della descrizione è di 300 caratteri!"
+        ]);
         $data = $request->all();
         $newProject = new Project();
         $newProject->fill($data);

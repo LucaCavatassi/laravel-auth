@@ -5,6 +5,17 @@
             <h1 class="mt-2">Aggiungi Progetto</h1>
             <p>Compila il form per aggiungere un nuovo progetto alla tua lista.</p>
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                
+            @endif
+
             <form action="{{ route("admin.projects.store") }}" method="POST">
                 @csrf
                 <div class="mb-3">
