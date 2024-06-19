@@ -2,8 +2,14 @@
 
 @section('content')
         <div class="container">
-            <h1 class="mt-2">Lista Progetti</h1>
-            <p>Clicca il nome per avere maggiori informazioni</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="mt-2">Lista Progetti</h1>
+                <span class="fs-4 add-btn d-flex align-items-center justify-content-center text-white me-5"><a href="{{ route("admin.projects.create") }}"><i class="fa-solid fa-plus"></i></a></span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <p>Clicca il nome per avere maggiori informazioni</p>
+                <p class="me-1">Aggiungi progetto</p>
+            </div>
 
             <table class="table table-striped table-hove ms-body" >
                 <thead>

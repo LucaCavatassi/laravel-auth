@@ -69,6 +69,12 @@
                   <i class="fa-solid fa-table"></i> Projects
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white {{ Request::path() ==  'admin/projects/create' ? 'bg-primary' : '' }}"
+                  href="{{ route('admin.projects.create') }}">
+                  <i class="fa-solid fa-file"></i> Add Project
+                </a>
+              </li>
             </ul>
 
 
