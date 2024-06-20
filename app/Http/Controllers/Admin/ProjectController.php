@@ -83,7 +83,11 @@ class ProjectController extends Controller
         
         $data = $request->all();
         
+        $project->slug = $request->title;
         $project->update($data);
+        // dd($project);
+        
+        // dd($project);
         return redirect()->route("admin.projects.index")->with("messageEdit", "Il progetto ". $project->title . " è stato aggiornato con successo!");;
 
     }
