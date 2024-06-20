@@ -11,9 +11,21 @@
                 <p class="me-1">Aggiungi progetto</p>
             </div>
 
-            @if (session("message"))
+            @if (session("messageDelete"))
                 <div class="alert alert-success">
-                    {{ session("message") }}
+                    {{ session("messageDelete") }}
+                </div>
+            @endif
+
+            @if (session("messageUpload"))
+                <div class="alert alert-primary">
+                    {{ session("messageUpload") }}
+                </div>
+            @endif
+
+            @if (session("messageEdit"))
+                <div class="alert alert-primary">
+                    {{ session("messageEdit") }}
                 </div>
             @endif
 

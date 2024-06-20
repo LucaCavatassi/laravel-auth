@@ -46,7 +46,7 @@ class ProjectController extends Controller
 
         $newProject->save();
 
-        return redirect()->route("admin.projects.index");   
+        return redirect()->route("admin.projects.index")->with("messageUpload", "Il progetto ". $newProject->title . " è stato aggiunto con successo!");;   
     }
 
     /**
@@ -84,7 +84,7 @@ class ProjectController extends Controller
         $data = $request->all();
         
         $project->update($data);
-        return redirect()->route("admin.projects.index");
+        return redirect()->route("admin.projects.index")->with("messageEdit", "Il progetto ". $project->title . " è stato aggiornato con successo!");;
 
     }
 
@@ -96,6 +96,6 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         $project->delete();
         
-        return redirect()->route("admin.projects.index")->with("message", "Il progetto ". $project->title . " è stato eliminato con successo!");
+        return redirect()->route("admin.projects.index")->with("messageDelete", "Il progetto ". $project->title . " è stato eliminato con successo!");
     }
 }

@@ -2,8 +2,11 @@
 
 @section('content')
         <div class="container">
-            <h1 class="mt-2">Aggiungi Progetto</h1>
-            <p>Compila il form per aggiungere un nuovo progetto alla tua lista.</p>
+            <h1 class="mt-2">Modifica Progetto</h1>
+            <div class="d-flex justify-content-between">
+                <p>Compila il form per aggiungere un nuovo progetto alla tua lista.</p>
+                <a href="{{ route("admin.projects.index") }}" class="text-danger">Annulla</a>
+            </div>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -27,6 +30,7 @@
                     <textarea type="text-area" class="form-control" id="descrizione" aria-describedby="description" name="description">{{ $project->description }}</textarea>    
                 </div>
                 <button type="submit" class="btn btn-primary">Invia</button>
+                
             </form>
         </div>
 @endsection

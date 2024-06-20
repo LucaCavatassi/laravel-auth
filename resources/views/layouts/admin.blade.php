@@ -60,19 +60,19 @@
               <li class="nav-item">
                 <a class="nav-link text-white {{ Request::path() == 'admin' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.dashboard') }}">
-                  <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Home Dashboard
+                  <i class="fa-solid fa-tachometer-alt fa-fw"></i> Home Dashboard
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white {{ Request::path() ==  'admin/projects' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.projects.index') }}">
-                  <i class="fa-solid fa-table"></i> Projects
+                  <i class="fa-solid fa-table fa-fw"></i> Projects
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white {{ Request::path() ==  'admin/projects/create' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.projects.create') }}">
-                  <i class="fa-solid fa-file"></i> Add Project
+                  <i class="fa-solid fa-file fa-fw"></i> Add Project
                 </a>
               </li>
             </ul>
