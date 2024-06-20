@@ -11,6 +11,12 @@
                 <p class="me-1">Aggiungi progetto</p>
             </div>
 
+            @if (session("message"))
+                <div class="alert alert-success">
+                    {{ session("message") }}
+                </div>
+            @endif
+
             <table class="table table-striped table-hove ms-body" >
                 <thead>
                     <tr>
