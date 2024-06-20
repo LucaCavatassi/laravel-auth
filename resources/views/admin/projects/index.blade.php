@@ -43,7 +43,7 @@
                             <th scope="row">{{ $project->id }}</th>
                             <td><a href="{{ route("admin.projects.show", ["project" => $project->slug]) }}">{{ $project->title }}</a></td>
                             <td>{{ $project->description }}</td>
-                            <td><a class="btn btn-primary" href="{{ route ("admin.projects.edit", ["project" => $project->slug])}}">Modifica</a></td>
+                            {{-- <td><a class="btn btn-primary" href="{{ route ("admin.projects.edit", ["project" => $project->slug])}}">Modifica</a></td> --}}
                             <td><button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Elimina</button></td>
                         </tr>
                     @endforeach

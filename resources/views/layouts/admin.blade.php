@@ -66,19 +66,19 @@
               <li class="nav-item">
                 <a class="nav-link text-white {{ Request::path() ==  'admin/projects' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.projects.index') }}">
-                  <i class="fa-solid fa-table fa-fw"></i> Projects
+                  <i class="fa-solid fa-table fa-fw"></i> Progetti
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white {{ Request::path() ==  'admin/projects/create' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.projects.create') }}">
-                  <i class="fa-solid fa-file fa-fw"></i> Add Project
+                  <i class="fa-solid fa-file fa-fw"></i> Aggiungi Progetto
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white {{ Request::path() ==  'admin/editselector' ? 'bg-primary' : '' }}"
                   href="{{ route('admin.editselector') }}">
-                  <i class="fa-solid fa-pen-to-square fa-fw"></i> Edit Project
+                  <i class="fa-solid fa-pen-to-square fa-fw"></i> Modifica Progetto
                 </a>
               </li>
             </ul>
