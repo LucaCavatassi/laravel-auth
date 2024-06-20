@@ -23,7 +23,7 @@
                     @foreach ($projects as $project)
                         <tr>
                             <th scope="row">{{ $project->id }}</th>
-                            <td><a href="{{ route("admin.dashboard") }}">{{ $project->title }}</a></td>
+                            <td><a href="{{ route("admin.projects.show", ["project" => $project->slug]) }}">{{ $project->title }}</a></td>
                             <td>{{ $project->description }}</td>
                             <td>
                                 <form action="{{ route ("admin.projects.destroy", ["project" => $project->id])}}" method="POST" >
