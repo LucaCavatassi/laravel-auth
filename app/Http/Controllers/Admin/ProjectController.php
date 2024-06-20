@@ -61,17 +61,31 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug)
     {
-        //
+        $project = Project::where("slug", $slug)->first();
+        return view("admin.projects.edit", compact("project"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $slug)
     {
-        //
+        $request->validate([
+            "title" => "required|max:30",
+            "description" => "max:300"
+        ], [
+            "title.required" => "Il titolo è necessario per aggiungere un nuovo progetto!",
+            "title.max" => "La lunghezza massima della descrizione è di 300 caratteri!"
+        ]);
+        $project = Project::where("slug", $slug)->first();
+        
+        $data = $request->all();
+        
+        $project->update($data);
+        return redirect()->route("admin.projects.index");
+
     }
 
     /**
