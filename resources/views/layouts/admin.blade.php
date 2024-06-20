@@ -75,6 +75,12 @@
                   <i class="fa-solid fa-file fa-fw"></i> Add Project
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white {{ Request::path() ==  'admin/projects/create' ? 'bg-primary' : '' }}"
+                  href="{{ route('admin.editselector') }}">
+                  <i class="fa-solid fa-pen-to-square fa-fw"></i> Edit Project
+                </a>
+              </li>
             </ul>
 
 

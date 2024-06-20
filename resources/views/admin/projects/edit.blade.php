@@ -4,7 +4,7 @@
         <div class="container">
             <h1 class="mt-2">Modifica Progetto</h1>
             <div class="d-flex justify-content-between">
-                <p>Compila il form per aggiungere un nuovo progetto alla tua lista.</p>
+                <p>Modifica il form per aggiornare un progetto della tua lista.</p>
                 <a href="{{ route("admin.projects.index") }}" class="text-danger">Annulla</a>
             </div>
 

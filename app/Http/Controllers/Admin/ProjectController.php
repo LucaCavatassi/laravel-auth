@@ -98,4 +98,10 @@ class ProjectController extends Controller
         
         return redirect()->route("admin.projects.index")->with("messageDelete", "Il progetto ". $project->title . " è stato eliminato con successo!");
     }
+
+    public function editselector (){
+        $projects = Project::all();
+
+        return view("admin.projects.editselector", compact("projects"));
+    }
 }
