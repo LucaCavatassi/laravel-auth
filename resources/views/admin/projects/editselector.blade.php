@@ -26,7 +26,7 @@
                 </div>
                 {{-- BODY --}}
                 <div class="modal-body">
-                    <span>Vuoi davvero modificare l'elemento selezionato?</span>
+                    <span>Vuoi davvero modificare <strong><i>{{ $project->title }}</i></strong> ?</span>
                 </div>
                 {{-- FOOTER --}}
                 <div class="modal-footer">
