@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class ProjectController extends Controller
 {
@@ -74,8 +75,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $slug)
     {
+        $project = Project::where("slug", $slug)->first();
         $request->validate([
-            "title" => "required|max:30|unique:projects",
+            "title" => ["required","max:30"],
             "description" => "max:300"
         ], [
             "title.required" => "Il titolo è necessario per aggiungere un nuovo progetto!",
@@ -83,7 +85,6 @@ class ProjectController extends Controller
             "title.unique" => "Il titolo è già utilizzato cambia titolo!",
             "description.max" => "La lunghezza massima della descrizione è di 300 caratteri!"
         ]);
-        $project = Project::where("slug", $slug)->first();
         
         $data = $request->all();
         
